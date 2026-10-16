@@ -1,0 +1,36 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>com.teixing.codeGeneration</id>
+
+    <name>CodeGeneration</name>
+
+    <vendor email="waaqit@163.com" url="http://www.teixing.com">TeiXing</vendor>
+
+    <description><![CDATA[
+    数据库代码生成器：连接数据库（支持 TiDB / MySQL / Oracle / DB2 / PostgreSQL / SQLServer），
+    根据表结构生成实体类（domain）与 MyBatis / iBatis2 XML 文件。<br>
+    入口：Tools 菜单 -&gt; 数据库代码生成器。
+    或者 包上右击 数据库代码生成器
+  ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectService serviceImplementation="com.teixing.codegen.persistent.GeneratorSettings"/>
+    </extensions>
+
+    <actions>
+        <action id="Teixing.CodeGeneration.GenerateAction"
+                class="com.teixing.codegen.action.GenerateAction"
+                text="数据库代码生成器"
+                description="连接数据库，根据表结构生成实体类与 MyBatis XML">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+        <action id="Teixing.CodeGeneration.GenerateAtPackageAction"
+                class="com.teixing.codegen.action.GenerateAtPackageAction"
+                text="数据库代码生成器（输出到该目录）"
+                description="打开生成器，并将该包目录带入为输出目录">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
