@@ -7,11 +7,12 @@
     <vendor email="waaqit@163.com" url="http://www.teixing.com">TeiXing</vendor>
 
     <description><![CDATA[
+    Database code generator. Connect to a database (TiDB / MySQL / Oracle / DB2 / PostgreSQL / SQLServer) and generate entity classes (domain) and MyBatis / iBatis2 SQL map XML files from table metadata.<br>
     数据库代码生成器：连接数据库（支持 TiDB / MySQL / Oracle / DB2 / PostgreSQL / SQLServer），
     根据表结构生成实体类（domain）与 MyBatis / iBatis2 XML 文件。<br>
     入口：Tools 菜单 -&gt; 数据库代码生成器。
     或者 包上右击 数据库代码生成器
-  ]]></description>
+    ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
 

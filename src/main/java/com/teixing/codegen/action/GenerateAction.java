@@ -1,5 +1,6 @@
 package com.teixing.codegen.action;
 
+import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
@@ -10,6 +11,11 @@ import org.jetbrains.annotations.NotNull;
  * 插件入口：Tools 菜单 -> 数据库代码生成器
  */
 public class GenerateAction extends AnAction {
+
+    @Override
+    public @NotNull ActionUpdateThread getActionUpdateThread() {
+        return ActionUpdateThread.BGT;
+    }
 
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {

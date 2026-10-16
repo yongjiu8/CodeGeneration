@@ -41,7 +41,8 @@ tasks {
     }
 
     patchPluginXml {
-        sinceBuild.set("241")
+        sinceBuild.set("223")
+        untilBuild.set("263.*")
         changeNotes.set("1.0版本上线")
     }
 
